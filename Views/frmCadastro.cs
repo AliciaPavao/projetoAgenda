@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using ProjetoAgenda.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -85,6 +87,35 @@ namespace ProjetoAgenda
         private void txtRepeteSenha_TextChanged(object sender, EventArgs e)
         {
             habilitarBotaoCadastrar();
+        }
+
+        private void btnCCadastrar_Click(object sender, EventArgs e)
+        {
+            MySqlConnection conexao = ConexaoDB.CriarConexao();
+
+            //abrindo conexão
+            conexao.Open();
+
+            //criando o comando SQL para inserir o usuário
+            string sql = $"INSERT INTO tbUsuarios (nome, usuario, telefone, senha) VALUES (@nome, @usuario, @telefone, @senha)";
+
+            //criando o comando
+            MySqlCommand comando = new MySqlCommand(sql, conexao);
+
+            comando.Parameters.AddWithValue("@nome", txtNome.Text);
+            comando.Parameters.AddWithValue("@usuario", txtUsuario.Text);
+            comando.Parameters.AddWithValue("@telefone", txtTelefone.Text);
+            comando.Parameters.AddWithValue("@senha", txtSenha.Text);
+
+            //executando a instrução SQL no banco
+            comando.ExecuteNonQuery();
+
+            //fechando a conexão com o banco
+            conexao.Close();
+
+            MessageBox.Show("Cadastro efetuado com sucesso! \n Você já pode realizar o login!");
+
+            this.Close();
         }
     }
 }
