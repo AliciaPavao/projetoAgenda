@@ -172,7 +172,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(411, 428);
+            ClientSize = new Size(414, 428);
             Controls.Add(btnCancelar);
             Controls.Add(btnCCadastrar);
             Controls.Add(groupBox1);
@@ -198,5 +198,6 @@
         private Button btnCancelar;
         private TextBox txtTelefone;
         private Label label5;
+        private Button button1;
     }
 }
