@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             btnCadastrar = new Button();
             btnLogar = new Button();
             txtSenha = new TextBox();
@@ -40,6 +41,8 @@
             // 
             // btnCadastrar
             // 
+            btnCadastrar.BackColor = Color.Khaki;
+            btnCadastrar.FlatStyle = FlatStyle.Flat;
             btnCadastrar.ImageAlign = ContentAlignment.MiddleLeft;
             btnCadastrar.Location = new Point(123, 98);
             btnCadastrar.Margin = new Padding(2);
@@ -47,19 +50,21 @@
             btnCadastrar.Size = new Size(108, 33);
             btnCadastrar.TabIndex = 13;
             btnCadastrar.Text = "&Cadastrar";
-            btnCadastrar.UseVisualStyleBackColor = true;
+            btnCadastrar.UseVisualStyleBackColor = false;
             btnCadastrar.Click += btnCadastrar_Click;
             // 
             // btnLogar
             // 
+            btnLogar.BackColor = Color.Khaki;
             btnLogar.Enabled = false;
+            btnLogar.FlatStyle = FlatStyle.Flat;
             btnLogar.Location = new Point(11, 98);
             btnLogar.Margin = new Padding(2);
             btnLogar.Name = "btnLogar";
             btnLogar.Size = new Size(108, 33);
             btnLogar.TabIndex = 12;
             btnLogar.Text = "&Logar";
-            btnLogar.UseVisualStyleBackColor = true;
+            btnLogar.UseVisualStyleBackColor = false;
             // 
             // txtSenha
             // 
@@ -83,7 +88,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(89, 50);
+            label2.Location = new Point(89, 52);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
             label2.Size = new Size(39, 15);
@@ -102,27 +107,28 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.CADEADO;
-            pictureBox1.Location = new Point(11, 20);
-            pictureBox1.Margin = new Padding(2);
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Location = new Point(11, 26);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(74, 65);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 11;
+            pictureBox1.Size = new Size(73, 63);
+            pictureBox1.TabIndex = 14;
             pictureBox1.TabStop = false;
             // 
             // frmLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.LemonChiffon;
             ClientSize = new Size(244, 142);
+            Controls.Add(pictureBox1);
             Controls.Add(btnCadastrar);
             Controls.Add(btnLogar);
             Controls.Add(txtSenha);
             Controls.Add(txtUsuario);
             Controls.Add(label2);
             Controls.Add(label3);
-            Controls.Add(pictureBox1);
             Name = "frmLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";

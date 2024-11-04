@@ -151,27 +151,32 @@
             // 
             // btnCCadastrar
             // 
+            btnCCadastrar.BackColor = Color.Khaki;
+            btnCCadastrar.FlatStyle = FlatStyle.Flat;
             btnCCadastrar.Location = new Point(21, 358);
             btnCCadastrar.Name = "btnCCadastrar";
             btnCCadastrar.Size = new Size(165, 50);
             btnCCadastrar.TabIndex = 1;
             btnCCadastrar.Text = "Cadastrar";
-            btnCCadastrar.UseVisualStyleBackColor = true;
+            btnCCadastrar.UseVisualStyleBackColor = false;
             btnCCadastrar.Click += btnCCadastrar_Click;
             // 
             // btnCancelar
             // 
+            btnCancelar.BackColor = Color.Khaki;
+            btnCancelar.FlatStyle = FlatStyle.Flat;
             btnCancelar.Location = new Point(219, 358);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(165, 50);
             btnCancelar.TabIndex = 2;
             btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.UseVisualStyleBackColor = false;
             // 
             // frmCadastro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.LemonChiffon;
             ClientSize = new Size(414, 428);
             Controls.Add(btnCancelar);
             Controls.Add(btnCCadastrar);
