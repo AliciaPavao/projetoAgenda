@@ -8,3 +8,10 @@ CREATE TABLE tbUsuarios (
     telefone VARCHAR(15),
     senha VARCHAR(20) NOT NULL
     );
+
+select * from tbUsuarios;
+
+CREATE TABLE TbCategoria (
+	categorias VARCHAR(40) NOT NULL,
+    cod_caegoria INT AUTO_INCREMENT primary key
+    );

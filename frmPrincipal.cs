@@ -1,5 +1,4 @@
-﻿using ProjetoAgenda.Views;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,6 +25,22 @@ namespace ProjetoAgenda
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCategorias Categoria = new frmCategorias();
+            Categoria.ShowDialog();
         }
     }
 }

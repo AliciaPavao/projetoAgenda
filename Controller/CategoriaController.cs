@@ -2,6 +2,7 @@
 using ProjetoAgenda.Data;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,15 +11,16 @@ namespace ProjetoAgenda.Controller
 {
     internal class CategoriaController
     {
-        public bool AddCategoria(string categorias, string cod_categorias)
+        public bool AddCategoria(string categorias)
         {
+            MySqlConnection conexao = null;
             try
             {
-                //Cria a conexão, estou utilizando a classe ConexaoDB que está dentro da pasta DATA
-                MySqlConnection conexao = ConexaoDB.CriarConexao();
+                
+                conexao = ConexaoDB.CriarConexao();
 
                 //Comando SQL que será executado
-                string sql = "INSERT INTO tbCategorias (categorias, cod_categorias) VALUES (@categorias, @cod_categorias);";
+                string sql = "INSERT INTO tbCategoria (categorias) VALUES (@categorias);";
 
                 //Abri a conexão com o banco
                 conexao.Open();
@@ -29,7 +31,6 @@ namespace ProjetoAgenda.Controller
                 //Estou trocanco o valor dos @ pelas informações que serão cadastradas
                 //Essas informações vieram dos parametros da função
                 comando.Parameters.AddWithValue("@categorias", categorias);
-                comando.Parameters.AddWithValue("@cod_categorias", cod_categorias);
 
                 //Executando no banco de dados
                 int linhasAfetadas = comando.ExecuteNonQuery();
@@ -49,6 +50,49 @@ namespace ProjetoAgenda.Controller
             {
                 MessageBox.Show($"Erro ao cadastrar: {erro.Message}", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
+
+        public DataTable GetCategorias()
+        {
+            //Criando uma conexao vazia
+            MySqlConnection conexao = null;
+
+            try
+            {
+                //Criando a conexão usando a ConexaoDB que eu já havia criado
+                conexao = ConexaoDB.CriarConexao();
+
+                //Montei o select que retorna todas as categorias
+                string sql = @"select cod_caegoria AS 'Código', categorias AS 'Categoria' from tbcategoria;";
+
+                //Abri a conexão
+                conexao.Open();
+
+                //Criei um adaptador
+                MySqlDataAdapter adapter = new MySqlDataAdapter(sql, conexao);
+
+                //Criei uma tabela vazia
+                DataTable table = new DataTable();
+
+                //Pedindo para o adaptador preencher a tabela
+                adapter.Fill(table);
+
+                //Retorno a tabela preenchida 
+                return table;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show($"ERRO AO RECUPERAR CATEGORIAS: {erro.Message}");
+                return new DataTable();
+            }
+            finally
+            {
+                conexao.Close();
             }
         }
     }

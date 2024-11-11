@@ -13,7 +13,7 @@ namespace ProjetoAgenda
             ApplicationConfiguration.Initialize();
             //
             //Application.Run(new frmLogin());
-            Application.Run(new FrmTeste());
+            Application.Run(new frmLogin());
         }
     }
 }
