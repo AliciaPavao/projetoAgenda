@@ -171,6 +171,7 @@
             btnCancelar.TabIndex = 2;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = false;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // frmCadastro
             // 
@@ -183,6 +184,7 @@
             Controls.Add(groupBox1);
             Name = "frmCadastro";
             Text = "Form1";
+            Load += frmCadastro_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);

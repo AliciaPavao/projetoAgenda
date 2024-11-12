@@ -68,7 +68,7 @@ namespace ProjetoAgenda.Controller
                 conexao = ConexaoDB.CriarConexao();
 
                 //Montei o select que retorna todas as categorias
-                string sql = @"select cod_caegoria AS 'Código', categorias AS 'Categoria' from tbcategoria;";
+                string sql = @"select cod_categoria AS 'Código', categorias AS 'Categoria' from tbcategoria;";
 
                 //Abri a conexão
                 conexao.Open();
@@ -89,6 +89,52 @@ namespace ProjetoAgenda.Controller
             {
                 MessageBox.Show($"ERRO AO RECUPERAR CATEGORIAS: {erro.Message}");
                 return new DataTable();
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
+
+        public bool DelCategoria(int cod_categoria)
+        {
+            MySqlConnection conexao = null;
+            try
+            {
+
+                conexao = ConexaoDB.CriarConexao();
+
+                //Comando SQL que será executado
+                string sql = "delete from TbCategoria where cod_categoria = @cod_categoria;";
+
+                //Abri a conexão com o banco
+                conexao.Open();
+
+                //Esse cara é o responsavel por executar o comando SQL
+                MySqlCommand comando = new MySqlCommand(sql, conexao);
+
+                //Estou trocanco o valor dos @ pelas informações que serão cadastradas
+                //Essas informações vieram dos parametros da função
+                comando.Parameters.AddWithValue("@cod_categoria", cod_categoria);
+
+                //Executando no banco de dados
+                int linhasAfetadas = comando.ExecuteNonQuery();
+
+                conexao.Close();
+
+                if (linhasAfetadas > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show($"Erro ao cadastrar: {erro.Message}", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
             }
             finally
             {

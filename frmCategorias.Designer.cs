@@ -38,12 +38,16 @@
             pictureBox4 = new PictureBox();
             btnSair = new Button();
             dgvCategoria = new DataGridView();
-            button1 = new Button();
+            pictureBox5 = new PictureBox();
+            pictureBox6 = new PictureBox();
+            btnExcluir = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvCategoria).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             SuspendLayout();
             // 
             // txtCategoria
@@ -82,7 +86,7 @@
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(349, 220);
+            pictureBox1.Location = new Point(349, 199);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(73, 63);
             pictureBox1.TabIndex = 15;
@@ -104,7 +108,7 @@
             pictureBox3.BackColor = Color.Transparent;
             pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
             pictureBox3.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox3.Location = new Point(21, 164);
+            pictureBox3.Location = new Point(21, 160);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(116, 106);
             pictureBox3.TabIndex = 17;
@@ -125,8 +129,8 @@
             // 
             btnSair.BackColor = Color.Khaki;
             btnSair.FlatStyle = FlatStyle.Flat;
-            btnSair.Font = new Font("Segoe UI", 12F);
-            btnSair.Location = new Point(12, 458);
+            btnSair.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnSair.Location = new Point(12, 451);
             btnSair.Name = "btnSair";
             btnSair.Size = new Size(55, 29);
             btnSair.TabIndex = 19;
@@ -138,24 +142,46 @@
             // 
             dgvCategoria.BackgroundColor = SystemColors.Info;
             dgvCategoria.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvCategoria.Location = new Point(75, 301);
+            dgvCategoria.Location = new Point(75, 260);
             dgvCategoria.Name = "dgvCategoria";
             dgvCategoria.Size = new Size(323, 133);
             dgvCategoria.TabIndex = 20;
             dgvCategoria.CellContentClick += dataGridView1_CellContentClick;
             // 
-            // button1
+            // pictureBox5
             // 
-            button1.BackColor = Color.Khaki;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            button1.Location = new Point(173, 266);
-            button1.Name = "button1";
-            button1.Size = new Size(103, 29);
-            button1.TabIndex = 21;
-            button1.Text = "Botão";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            pictureBox5.BackColor = Color.Transparent;
+            pictureBox5.BackgroundImage = (Image)resources.GetObject("pictureBox5.BackgroundImage");
+            pictureBox5.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox5.Location = new Point(419, 395);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(44, 40);
+            pictureBox5.TabIndex = 22;
+            pictureBox5.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.BackColor = Color.Transparent;
+            pictureBox6.BackgroundImage = (Image)resources.GetObject("pictureBox6.BackgroundImage");
+            pictureBox6.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox6.Location = new Point(21, 344);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(35, 31);
+            pictureBox6.TabIndex = 23;
+            pictureBox6.TabStop = false;
+            // 
+            // btnExcluir
+            // 
+            btnExcluir.BackColor = Color.Khaki;
+            btnExcluir.FlatStyle = FlatStyle.Flat;
+            btnExcluir.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnExcluir.Location = new Point(382, 451);
+            btnExcluir.Name = "btnExcluir";
+            btnExcluir.Size = new Size(82, 29);
+            btnExcluir.TabIndex = 24;
+            btnExcluir.Text = "excluir";
+            btnExcluir.UseVisualStyleBackColor = false;
+            btnExcluir.Click += btnExcluir_Click;
             // 
             // frmCategorias
             // 
@@ -163,7 +189,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LemonChiffon;
             ClientSize = new Size(475, 491);
-            Controls.Add(button1);
+            Controls.Add(btnExcluir);
+            Controls.Add(pictureBox6);
+            Controls.Add(pictureBox5);
             Controls.Add(dgvCategoria);
             Controls.Add(btnSair);
             Controls.Add(pictureBox4);
@@ -173,13 +201,17 @@
             Controls.Add(lblCadastro);
             Controls.Add(btnCadastrar);
             Controls.Add(txtCategoria);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "frmCategorias";
             Text = "frmCategorias";
+            Load += frmCategorias_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvCategoria).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -195,6 +227,8 @@
         private PictureBox pictureBox4;
         private Button btnSair;
         private DataGridView dgvCategoria;
-        private Button button1;
+        private PictureBox pictureBox5;
+        private PictureBox pictureBox6;
+        private Button btnExcluir;
     }
 }

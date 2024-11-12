@@ -92,6 +92,8 @@ namespace ProjetoAgenda
 
         private void btnCCadastrar_Click(object sender, EventArgs e)
         {
+            this.Hide();
+
             //Pegando os dados do formulario
             string nome = txtNome.Text;
             string usuario = txtUsuario.Text;
@@ -113,7 +115,22 @@ namespace ProjetoAgenda
                 MessageBox.Show("Não foi possivel cadastrar o usuário.");
             }
 
+            frmLogin Login = new frmLogin();
+            Login.ShowDialog();
+
         }
 
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            frmLogin Login = new frmLogin();
+            Login.ShowDialog();
+        }
+
+        private void frmCadastro_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

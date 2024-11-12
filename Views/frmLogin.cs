@@ -22,8 +22,11 @@ namespace ProjetoAgenda
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
+            this.Hide();
+
             frmCadastro formularioCadastro = new frmCadastro();
             formularioCadastro.ShowDialog();
+
         }
 
         private void txtUsuario_TextChanged(object sender, EventArgs e)
@@ -42,7 +45,12 @@ namespace ProjetoAgenda
 
             frmPrincipal Principal = new frmPrincipal();
             Principal.ShowDialog();
-           
+
+        }
+
+        private void frmLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

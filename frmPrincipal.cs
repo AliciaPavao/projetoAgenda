@@ -42,5 +42,10 @@ namespace ProjetoAgenda
             frmCategorias Categoria = new frmCategorias();
             Categoria.ShowDialog();
         }
+
+        private void excluirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

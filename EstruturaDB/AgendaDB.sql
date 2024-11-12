@@ -13,5 +13,5 @@ select * from tbUsuarios;
 
 CREATE TABLE TbCategoria (
 	categorias VARCHAR(40) NOT NULL,
-    cod_caegoria INT AUTO_INCREMENT primary key
+    cod_categoria INT AUTO_INCREMENT primary key
     );

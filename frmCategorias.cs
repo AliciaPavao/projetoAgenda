@@ -18,11 +18,20 @@ namespace ProjetoAgenda
             InitializeComponent();
         }
 
+        private void AtualizaDataGrid()
+        {
+            CategoriaController controleCategoria = new CategoriaController();
+            DataTable tabela = controleCategoria.GetCategorias();
+            dgvCategoria.DataSource = tabela;
+        }
+
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             string categoria = txtCategoria.Text;
             CategoriaController AddCategoria = new CategoriaController();
             AddCategoria.AddCategoria(categoria);
+
+            AtualizaDataGrid();
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -37,10 +46,23 @@ namespace ProjetoAgenda
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CategoriaController controleCategoria = new CategoriaController();
-            DataTable tabela = controleCategoria.GetCategorias();
-            dgvCategoria.DataSource = tabela;
 
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            int codCategoria = Convert.ToInt32(dgvCategoria.SelectedRows[0].Cells[0].Value);
+
+            //int Codcategoria = Convert.ToInt32(txtCategoria.Text);
+            CategoriaController ExcluirCategoria = new CategoriaController();
+            ExcluirCategoria.DelCategoria(codCategoria);
+
+            AtualizaDataGrid();
+        }
+
+        private void frmCategorias_Load(object sender, EventArgs e)
+        {
+            AtualizaDataGrid();
         }
     }
 }

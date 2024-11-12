@@ -2,6 +2,7 @@
 using ProjetoAgenda.Data;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -88,6 +89,91 @@ namespace ProjetoAgenda.Controller
             {
                 MessageBox.Show("Erro ao verificar usuário.");
                 return false;
+            }
+        }
+
+        public DataTable GetUsuarios()
+        {
+            //Criando uma conexao vazia
+            MySqlConnection conexao = null;
+
+            try
+            {
+                //Criando a conexão usando a ConexaoDB que eu já havia criado
+                conexao = ConexaoDB.CriarConexao();
+
+                //Montei o select que retorna todas as categorias
+                string sql = @"select nome, usuario from tbUsuarios;";
+
+                //Abri a conexão
+                conexao.Open();
+
+                //Criei um adaptador
+                MySqlDataAdapter adapter = new MySqlDataAdapter(sql, conexao);
+
+                //Criei uma tabela vazia
+                DataTable table = new DataTable();
+
+                //Pedindo para o adaptador preencher a tabela
+                adapter.Fill(table);
+
+                //Retorno a tabela preenchida 
+                return table;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show($"ERRO AO RECUPERAR USUARIO: {erro.Message}");
+                return new DataTable();
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
+
+        public bool DelUsuario(string usuario)
+        {
+            MySqlConnection conexao = null;
+            try
+            {
+
+                conexao = ConexaoDB.CriarConexao();
+
+                //Comando SQL que será executado
+                string sql = "delete from tbUsuarios where usuario = (@usuario);";
+
+                //Abri a conexão com o banco
+                conexao.Open();
+
+                //Esse cara é o responsavel por executar o comando SQL
+                MySqlCommand comando = new MySqlCommand(sql, conexao);
+
+                //Estou trocanco o valor dos @ pelas informações que serão cadastradas
+                //Essas informações vieram dos parametros da função
+                comando.Parameters.AddWithValue("@usuario", usuario);
+
+                //Executando no banco de dados
+                int linhasAfetadas = comando.ExecuteNonQuery();
+
+                conexao.Close();
+
+                if (linhasAfetadas > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show($"Erro ao excluir usuario: {erro.Message}", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            finally
+            {
+                conexao.Close();
             }
         }
     }
