@@ -32,35 +32,41 @@
             btnSair = new Button();
             label1 = new Label();
             btnExcluir = new Button();
+            gbAlterarsenha = new GroupBox();
+            textBox1 = new TextBox();
+            btnAlterasenha = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            gbAlterarsenha.SuspendLayout();
             SuspendLayout();
             // 
             // dataGridView1
             // 
             dataGridView1.BackgroundColor = SystemColors.Info;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(29, 110);
+            dataGridView1.Location = new Point(29, 92);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(340, 295);
+            dataGridView1.Size = new Size(312, 245);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // btnSair
             // 
             btnSair.BackColor = Color.Khaki;
             btnSair.FlatStyle = FlatStyle.Flat;
             btnSair.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            btnSair.Location = new Point(330, 418);
+            btnSair.Location = new Point(279, 343);
             btnSair.Name = "btnSair";
             btnSair.Size = new Size(62, 28);
             btnSair.TabIndex = 1;
             btnSair.Text = "fechar";
             btnSair.UseVisualStyleBackColor = false;
+            btnSair.Click += btnSair_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            label1.Location = new Point(29, 70);
+            label1.Location = new Point(29, 53);
             label1.Name = "label1";
             label1.Size = new Size(312, 25);
             label1.TabIndex = 2;
@@ -71,26 +77,61 @@
             btnExcluir.BackColor = Color.Khaki;
             btnExcluir.FlatStyle = FlatStyle.Flat;
             btnExcluir.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            btnExcluir.Location = new Point(12, 418);
+            btnExcluir.Location = new Point(29, 343);
             btnExcluir.Name = "btnExcluir";
             btnExcluir.Size = new Size(62, 28);
             btnExcluir.TabIndex = 3;
             btnExcluir.Text = "excluir";
             btnExcluir.UseVisualStyleBackColor = false;
+            btnExcluir.Click += btnExcluir_Click;
+            // 
+            // gbAlterarsenha
+            // 
+            gbAlterarsenha.Controls.Add(btnAlterasenha);
+            gbAlterarsenha.Controls.Add(textBox1);
+            gbAlterarsenha.Location = new Point(399, 92);
+            gbAlterarsenha.Name = "gbAlterarsenha";
+            gbAlterarsenha.Size = new Size(238, 176);
+            gbAlterarsenha.TabIndex = 4;
+            gbAlterarsenha.TabStop = false;
+            gbAlterarsenha.Text = "Alterar senha";
+            // 
+            // textBox1
+            // 
+            textBox1.BackColor = SystemColors.Info;
+            textBox1.Font = new Font("Segoe UI", 14F);
+            textBox1.Location = new Point(13, 47);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(214, 32);
+            textBox1.TabIndex = 0;
+            // 
+            // btnAlterasenha
+            // 
+            btnAlterasenha.BackColor = Color.Khaki;
+            btnAlterasenha.FlatStyle = FlatStyle.Flat;
+            btnAlterasenha.Location = new Point(58, 104);
+            btnAlterasenha.Name = "btnAlterasenha";
+            btnAlterasenha.Size = new Size(118, 51);
+            btnAlterasenha.TabIndex = 1;
+            btnAlterasenha.Text = "Alterar";
+            btnAlterasenha.UseVisualStyleBackColor = false;
             // 
             // fmrUsuarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LemonChiffon;
-            ClientSize = new Size(395, 450);
+            ClientSize = new Size(669, 395);
             Controls.Add(btnExcluir);
             Controls.Add(label1);
             Controls.Add(btnSair);
             Controls.Add(dataGridView1);
+            Controls.Add(gbAlterarsenha);
             Name = "fmrUsuarios";
             Text = "fmrUsuarios";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            gbAlterarsenha.ResumeLayout(false);
+            gbAlterarsenha.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -101,5 +142,8 @@
         private Button btnSair;
         private Label label1;
         private Button btnExcluir;
+        private GroupBox gbAlterarsenha;
+        private Button btnAlterasenha;
+        private TextBox textBox1;
     }
 }

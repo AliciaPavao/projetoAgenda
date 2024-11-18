@@ -19,5 +19,7 @@ namespace ProjetoAgenda.Data
 
             return conexao;
         }
+
+        static public MySqlConnection CriarConexao(string usuario, string senha);
     }
 }

@@ -46,6 +46,7 @@
             pictureBox8 = new PictureBox();
             pictureBox9 = new PictureBox();
             pictureBox10 = new PictureBox();
+            usuarioToolStripMenuItem1 = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -100,7 +101,7 @@
             // cadastrarToolStripMenuItem
             // 
             cadastrarToolStripMenuItem.BackColor = Color.Khaki;
-            cadastrarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { categoriasToolStripMenuItem, usuarioToolStripMenuItem });
+            cadastrarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { categoriasToolStripMenuItem, usuarioToolStripMenuItem, usuarioToolStripMenuItem1 });
             cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
             cadastrarToolStripMenuItem.Size = new Size(180, 26);
             cadastrarToolStripMenuItem.Text = "Cadastrar";
@@ -119,6 +120,7 @@
             usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
             usuarioToolStripMenuItem.Size = new Size(180, 26);
             usuarioToolStripMenuItem.Text = "Usuario";
+            usuarioToolStripMenuItem.Click += usuarioToolStripMenuItem_Click;
             // 
             // pictureBox1
             // 
@@ -229,6 +231,12 @@
             pictureBox10.TabIndex = 25;
             pictureBox10.TabStop = false;
             // 
+            // usuarioToolStripMenuItem1
+            // 
+            usuarioToolStripMenuItem1.Name = "usuarioToolStripMenuItem1";
+            usuarioToolStripMenuItem1.Size = new Size(180, 26);
+            usuarioToolStripMenuItem1.Text = "Usuario";
+            // 
             // frmPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -287,5 +295,6 @@
         private PictureBox pictureBox8;
         private PictureBox pictureBox9;
         private PictureBox pictureBox10;
+        private ToolStripMenuItem usuarioToolStripMenuItem1;
     }
 }

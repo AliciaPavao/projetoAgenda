@@ -47,5 +47,11 @@ namespace ProjetoAgenda
         {
 
         }
+
+        private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fmrUsuarios excluir = new fmrUsuarios();
+            excluir.ShowDialog();
+        }
     }
 }
