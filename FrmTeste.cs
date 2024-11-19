@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProjetoAgenda.VariableGlobal;
 
 namespace ProjetoAgenda
 {
@@ -20,11 +21,12 @@ namespace ProjetoAgenda
 
         private void button1_Click(object sender, EventArgs e)
         {
-            UsuarioController controleUsuario = new UsuarioController();
+            Session.usuario = textBox1.Text;
+        }
 
-            bool resultado = controleUsuario.ValidarLogin("alecialulu", "CACA0712");
-
-            MessageBox.Show(resultado.ToString());
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(Session.usuario);
         }
     }
 }

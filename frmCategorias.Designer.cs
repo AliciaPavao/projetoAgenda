@@ -41,6 +41,8 @@
             pictureBox5 = new PictureBox();
             pictureBox6 = new PictureBox();
             btnExcluir = new Button();
+            pictureBox7 = new PictureBox();
+            pictureBox8 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -48,6 +50,8 @@
             ((System.ComponentModel.ISupportInitialize)dgvCategoria).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             SuspendLayout();
             // 
             // txtCategoria
@@ -86,7 +90,7 @@
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(349, 199);
+            pictureBox1.Location = new Point(349, 203);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(73, 63);
             pictureBox1.TabIndex = 15;
@@ -153,7 +157,7 @@
             pictureBox5.BackColor = Color.Transparent;
             pictureBox5.BackgroundImage = (Image)resources.GetObject("pictureBox5.BackgroundImage");
             pictureBox5.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox5.Location = new Point(419, 395);
+            pictureBox5.Location = new Point(419, 380);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(44, 40);
             pictureBox5.TabIndex = 22;
@@ -183,12 +187,36 @@
             btnExcluir.UseVisualStyleBackColor = false;
             btnExcluir.Click += btnExcluir_Click;
             // 
+            // pictureBox7
+            // 
+            pictureBox7.BackColor = Color.Transparent;
+            pictureBox7.BackgroundImage = (Image)resources.GetObject("pictureBox7.BackgroundImage");
+            pictureBox7.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox7.Location = new Point(289, 394);
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.Size = new Size(80, 76);
+            pictureBox7.TabIndex = 25;
+            pictureBox7.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            pictureBox8.BackColor = Color.Transparent;
+            pictureBox8.BackgroundImage = (Image)resources.GetObject("pictureBox8.BackgroundImage");
+            pictureBox8.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox8.Location = new Point(89, 398);
+            pictureBox8.Name = "pictureBox8";
+            pictureBox8.Size = new Size(73, 63);
+            pictureBox8.TabIndex = 26;
+            pictureBox8.TabStop = false;
+            // 
             // frmCategorias
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LemonChiffon;
             ClientSize = new Size(475, 491);
+            Controls.Add(pictureBox8);
+            Controls.Add(pictureBox7);
             Controls.Add(btnExcluir);
             Controls.Add(pictureBox6);
             Controls.Add(pictureBox5);
@@ -212,6 +240,8 @@
             ((System.ComponentModel.ISupportInitialize)dgvCategoria).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -230,5 +260,7 @@
         private PictureBox pictureBox5;
         private PictureBox pictureBox6;
         private Button btnExcluir;
+        private PictureBox pictureBox7;
+        private PictureBox pictureBox8;
     }
 }

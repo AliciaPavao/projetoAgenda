@@ -105,7 +105,7 @@ namespace ProjetoAgenda.Controller
                 conexao = ConexaoDB.CriarConexao();
 
                 //Montei o select que retorna todas as categorias
-                string sql = @"select nome, usuario from tbUsuarios;";
+                string sql = @"select usuario, nome from tbUsuarios;";
 
                 //Abri a conexão
                 conexao.Open();
@@ -142,7 +142,7 @@ namespace ProjetoAgenda.Controller
                 conexao = ConexaoDB.CriarConexao();
 
                 //Comando SQL que será executado
-                string sql = "delete from tbUsuarios where usuario = (@usuario);";
+                string sql = "delete from tbUsuarios where usuario = @usuario;";
 
                 //Abri a conexão com o banco
                 conexao.Open();

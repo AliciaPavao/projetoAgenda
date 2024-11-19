@@ -28,35 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
+            dgvUsers = new DataGridView();
             btnSair = new Button();
             label1 = new Label();
             btnExcluir = new Button();
             gbAlterarsenha = new GroupBox();
-            textBox1 = new TextBox();
             btnAlterasenha = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            textBox1 = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)dgvUsers).BeginInit();
             gbAlterarsenha.SuspendLayout();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dgvUsers
             // 
-            dataGridView1.BackgroundColor = SystemColors.Info;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(29, 92);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(312, 245);
-            dataGridView1.TabIndex = 0;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dgvUsers.BackgroundColor = SystemColors.Info;
+            dgvUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvUsers.Location = new Point(29, 92);
+            dgvUsers.Name = "dgvUsers";
+            dgvUsers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvUsers.Size = new Size(312, 245);
+            dgvUsers.TabIndex = 0;
+            dgvUsers.CellContentClick += dataGridView1_CellContentClick;
             // 
             // btnSair
             // 
             btnSair.BackColor = Color.Khaki;
             btnSair.FlatStyle = FlatStyle.Flat;
             btnSair.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            btnSair.Location = new Point(279, 343);
+            btnSair.Location = new Point(272, 343);
             btnSair.Name = "btnSair";
-            btnSair.Size = new Size(62, 28);
+            btnSair.Size = new Size(69, 28);
             btnSair.TabIndex = 1;
             btnSair.Text = "fechar";
             btnSair.UseVisualStyleBackColor = false;
@@ -79,7 +80,7 @@
             btnExcluir.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             btnExcluir.Location = new Point(29, 343);
             btnExcluir.Name = "btnExcluir";
-            btnExcluir.Size = new Size(62, 28);
+            btnExcluir.Size = new Size(69, 28);
             btnExcluir.TabIndex = 3;
             btnExcluir.Text = "excluir";
             btnExcluir.UseVisualStyleBackColor = false;
@@ -96,15 +97,6 @@
             gbAlterarsenha.TabStop = false;
             gbAlterarsenha.Text = "Alterar senha";
             // 
-            // textBox1
-            // 
-            textBox1.BackColor = SystemColors.Info;
-            textBox1.Font = new Font("Segoe UI", 14F);
-            textBox1.Location = new Point(13, 47);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(214, 32);
-            textBox1.TabIndex = 0;
-            // 
             // btnAlterasenha
             // 
             btnAlterasenha.BackColor = Color.Khaki;
@@ -116,6 +108,15 @@
             btnAlterasenha.Text = "Alterar";
             btnAlterasenha.UseVisualStyleBackColor = false;
             // 
+            // textBox1
+            // 
+            textBox1.BackColor = SystemColors.Info;
+            textBox1.Font = new Font("Segoe UI", 14F);
+            textBox1.Location = new Point(13, 47);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(214, 32);
+            textBox1.TabIndex = 0;
+            // 
             // fmrUsuarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -125,11 +126,12 @@
             Controls.Add(btnExcluir);
             Controls.Add(label1);
             Controls.Add(btnSair);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvUsers);
             Controls.Add(gbAlterarsenha);
             Name = "fmrUsuarios";
             Text = "fmrUsuarios";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += fmrUsuarios_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvUsers).EndInit();
             gbAlterarsenha.ResumeLayout(false);
             gbAlterarsenha.PerformLayout();
             ResumeLayout(false);
@@ -138,7 +140,7 @@
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView dgvUsers;
         private Button btnSair;
         private Label label1;
         private Button btnExcluir;
