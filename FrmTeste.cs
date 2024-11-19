@@ -21,12 +21,12 @@ namespace ProjetoAgenda
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Session.usuario = textBox1.Text;
+            UserSession.usuario = textBox1.Text;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(Session.usuario);
+            MessageBox.Show(UserSession.usuario);
         }
     }
 }

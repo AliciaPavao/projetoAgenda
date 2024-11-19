@@ -8,7 +8,7 @@ namespace ProjetoAgenda.VariableGlobal
 {
     // Publica para todas poderem usar
     // Estatica para todos poderem usar a mesma classe
-    public static class Session
+    public static class UserSession
     {
         // private só pode usar dentro da sessão publico qualquer um pode usar
         // se uma classe é estatica só existe uma
@@ -26,8 +26,21 @@ namespace ProjetoAgenda.VariableGlobal
         {
             get { return _usuario;}
 
-            set { value = value.ToUpper();
-            _usuario = value;}
+            set 
+            {
+              _usuario = value;
+            }
+        }
+
+        public static string nome
+        {
+            get { return _nome; }
+
+            set
+            {
+                value = value.ToUpper();
+                _nome = value;
+            }
         }
 
         public static string senha
@@ -36,7 +49,6 @@ namespace ProjetoAgenda.VariableGlobal
 
             set
             {
-                value = value.ToUpper();
                 _senha = value;
             }
         }

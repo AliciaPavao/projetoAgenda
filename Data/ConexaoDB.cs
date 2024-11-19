@@ -23,7 +23,7 @@ namespace ProjetoAgenda.Data
         static public MySqlConnection CriarConexao(string usuario, string senha)
         {
             //string contendo as informações para conexão
-            string stringConexao = $"Server=%;Database=dbAgenda;User ID={usuario};Password={senha};";
+            string stringConexao = $"Server=localhost;Database=dbAgenda;User ID={usuario};Password={senha};";
 
             //criando a conexão
             MySqlConnection conexao = new MySqlConnection(stringConexao);

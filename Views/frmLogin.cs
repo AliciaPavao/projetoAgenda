@@ -1,3 +1,5 @@
+using ProjetoAgenda.VariableGlobal;
+
 namespace ProjetoAgenda
 {
     public partial class frmLogin : Form
@@ -42,6 +44,9 @@ namespace ProjetoAgenda
         private void btnLogar_Click(object sender, EventArgs e)
         {
             this.Hide();
+
+            UserSession.usuario = txtUsuario.Text;
+            UserSession.senha = txtSenha.Text;
 
             frmPrincipal Principal = new frmPrincipal();
             Principal.ShowDialog();

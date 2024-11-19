@@ -1,5 +1,7 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using MySql.Data.MySqlClient;
 using ProjetoAgenda.Data;
+using ProjetoAgenda.VariableGlobal;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -17,7 +19,7 @@ namespace ProjetoAgenda.Controller
             try
             {
                 
-                conexao = ConexaoDB.CriarConexao();
+                conexao = ConexaoDB.CriarConexao(UserSession.usuario, UserSession.senha);
 
                 //Comando SQL que será executado
                 string sql = "INSERT INTO tbCategoria (categorias) VALUES (@categorias);";
@@ -68,7 +70,7 @@ namespace ProjetoAgenda.Controller
                 conexao = ConexaoDB.CriarConexao();
 
                 //Montei o select que retorna todas as categorias
-                string sql = @"select cod_categoria AS 'Código', categorias AS 'Categoria' from tbcategoria;";
+                string sql = @"select cod_categoria AS 'Código', categorias AS 'Categoria', usuario AS 'Usuario' from tbcategoria;";
 
                 //Abri a conexão
                 conexao.Open();
