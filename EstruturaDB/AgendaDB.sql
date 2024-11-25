@@ -25,13 +25,66 @@ CREATE TABLE TbCategoria (
     );
 
 DELIMITER $$
-CREATE TRIGGER 	TrIncertcategoria
+CREATE TRIGGER 	TrInsertcategoria
 BEFORE
 INSERT
 ON Tbcategoria
 FOR EACH ROW
 BEGIN
-	SET NEW.usuario = CURRENT_USER();
+	SET NEW.usuario = USER();
 END$$
+	
     
-select * from mysql.user;    
+CREATE TABLE TbLog (
+	cod_log INT AUTO_INCREMENT PRIMARY KEY,
+	usuario VARCHAR (20),
+    data_alterado DATETIME,
+    descriçao VARCHAR (300)
+);
+
+CREATE TABLE TbInsert (
+	cod_insert INT AUTO_INCREMENT PRIMARY KEY,
+	usuario VARCHAR (20),
+    data_alterado DATETIME,
+    descriçao VARCHAR (300)
+);
+
+DELIMITER $$
+CREATE TRIGGER TrLogcategoriadel
+AFTER
+DELETE
+ON Tbcategoria
+FOR EACH ROW
+BEGIN
+    INSERT INTO TbLog
+		(usuario,
+        data_alterado,
+        descriçao)
+	VALUES
+		(USER(),
+        current_timestamp(),
+        concat("A categoria ", old.categorias, " foi excluida.")
+        );
+END;
+$$
+
+DELIMITER $$
+CREATE TRIGGER Trcategoriaincert
+AFTER 
+INSERT
+ON Tbcategoria
+FOR EACH ROW
+BEGIN
+	INSERT INTO TbInsert
+		(usuario,
+        data_alterado,
+        descriçao)
+	VALUES
+		(USER(),
+        current_timestamp(),
+        concat("A categoria ", new.categorias, " foi inserida.")
+        );
+END;
+$$
+
+select * from tbLog;
