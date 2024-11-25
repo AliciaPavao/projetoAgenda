@@ -43,6 +43,10 @@
             btnExcluir = new Button();
             pictureBox7 = new PictureBox();
             pictureBox8 = new PictureBox();
+            btn_alterar = new Button();
+            pictureBox9 = new PictureBox();
+            pictureBox10 = new PictureBox();
+            pictureBox11 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -52,6 +56,9 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox11).BeginInit();
             SuspendLayout();
             // 
             // txtCategoria
@@ -146,7 +153,7 @@
             // 
             dgvCategoria.BackgroundColor = SystemColors.Info;
             dgvCategoria.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvCategoria.Location = new Point(75, 260);
+            dgvCategoria.Location = new Point(75, 241);
             dgvCategoria.Name = "dgvCategoria";
             dgvCategoria.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvCategoria.Size = new Size(323, 133);
@@ -158,7 +165,7 @@
             pictureBox5.BackColor = Color.Transparent;
             pictureBox5.BackgroundImage = (Image)resources.GetObject("pictureBox5.BackgroundImage");
             pictureBox5.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox5.Location = new Point(419, 380);
+            pictureBox5.Location = new Point(146, 440);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(44, 40);
             pictureBox5.TabIndex = 22;
@@ -193,7 +200,7 @@
             pictureBox7.BackColor = Color.Transparent;
             pictureBox7.BackgroundImage = (Image)resources.GetObject("pictureBox7.BackgroundImage");
             pictureBox7.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox7.Location = new Point(289, 394);
+            pictureBox7.Location = new Point(262, 421);
             pictureBox7.Name = "pictureBox7";
             pictureBox7.Size = new Size(80, 76);
             pictureBox7.TabIndex = 25;
@@ -204,11 +211,58 @@
             pictureBox8.BackColor = Color.Transparent;
             pictureBox8.BackgroundImage = (Image)resources.GetObject("pictureBox8.BackgroundImage");
             pictureBox8.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox8.Location = new Point(89, 398);
+            pictureBox8.Location = new Point(84, 383);
             pictureBox8.Name = "pictureBox8";
             pictureBox8.Size = new Size(73, 63);
             pictureBox8.TabIndex = 26;
             pictureBox8.TabStop = false;
+            // 
+            // btn_alterar
+            // 
+            btn_alterar.BackColor = Color.Khaki;
+            btn_alterar.FlatStyle = FlatStyle.Flat;
+            btn_alterar.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btn_alterar.Location = new Point(382, 416);
+            btn_alterar.Name = "btn_alterar";
+            btn_alterar.Size = new Size(82, 29);
+            btn_alterar.TabIndex = 27;
+            btn_alterar.Text = "alterar";
+            btn_alterar.UseVisualStyleBackColor = false;
+            btn_alterar.Click += btn_alterar_Click;
+            // 
+            // pictureBox9
+            // 
+            pictureBox9.BackColor = Color.Transparent;
+            pictureBox9.BackgroundImage = (Image)resources.GetObject("pictureBox9.BackgroundImage");
+            pictureBox9.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox9.Location = new Point(196, 391);
+            pictureBox9.Name = "pictureBox9";
+            pictureBox9.Size = new Size(56, 55);
+            pictureBox9.TabIndex = 28;
+            pictureBox9.TabStop = false;
+            pictureBox9.Click += pictureBox9_Click;
+            // 
+            // pictureBox10
+            // 
+            pictureBox10.BackColor = Color.Transparent;
+            pictureBox10.BackgroundImage = (Image)resources.GetObject("pictureBox10.BackgroundImage");
+            pictureBox10.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox10.Location = new Point(341, 380);
+            pictureBox10.Name = "pictureBox10";
+            pictureBox10.Size = new Size(33, 36);
+            pictureBox10.TabIndex = 29;
+            pictureBox10.TabStop = false;
+            // 
+            // pictureBox11
+            // 
+            pictureBox11.BackColor = Color.Transparent;
+            pictureBox11.BackgroundImage = (Image)resources.GetObject("pictureBox11.BackgroundImage");
+            pictureBox11.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox11.Location = new Point(404, 320);
+            pictureBox11.Name = "pictureBox11";
+            pictureBox11.Size = new Size(60, 60);
+            pictureBox11.TabIndex = 30;
+            pictureBox11.TabStop = false;
             // 
             // frmCategorias
             // 
@@ -216,6 +270,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LemonChiffon;
             ClientSize = new Size(475, 491);
+            Controls.Add(pictureBox11);
+            Controls.Add(pictureBox10);
+            Controls.Add(pictureBox9);
+            Controls.Add(btn_alterar);
             Controls.Add(pictureBox8);
             Controls.Add(pictureBox7);
             Controls.Add(btnExcluir);
@@ -230,6 +288,7 @@
             Controls.Add(lblCadastro);
             Controls.Add(btnCadastrar);
             Controls.Add(txtCategoria);
+            Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmCategorias";
             Text = "frmCategorias";
@@ -243,6 +302,9 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox11).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -263,5 +325,9 @@
         private Button btnExcluir;
         private PictureBox pictureBox7;
         private PictureBox pictureBox8;
+        private Button btn_alterar;
+        private PictureBox pictureBox9;
+        private PictureBox pictureBox10;
+        private PictureBox pictureBox11;
     }
 }

@@ -64,5 +64,21 @@ namespace ProjetoAgenda
         {
             AtualizaDataGrid();
         }
+
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_alterar_Click(object sender, EventArgs e)
+        {
+            int codCategoria = Convert.ToInt32(dgvCategoria.SelectedRows[0].Cells[0].Value);
+            string categoria = txtCategoria.Text;
+
+            CategoriaController AlterarCategoria = new CategoriaController();
+            AlterarCategoria.UpdateCategoria(codCategoria, categoria);
+
+            AtualizaDataGrid();
+        }
     }
 }
