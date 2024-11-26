@@ -70,7 +70,7 @@ namespace ProjetoAgenda.Controller
                 conexao = ConexaoDB.CriarConexao();
 
                 //Montei o select que retorna todas as categorias
-                string sql = @"select cod_categoria AS 'Código', categorias AS 'Categoria', usuario AS 'Usuario' from tbcategoria;";
+                string sql = $@"select cod_categoria AS 'Código', categorias AS 'Categoria', usuario AS 'Usuario' from tbcategoria where usuario = '{UserSession.usuario}@localhost';";
 
                 //Abri a conexão
                 conexao.Open();

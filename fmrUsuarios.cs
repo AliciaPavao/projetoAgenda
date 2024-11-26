@@ -31,7 +31,7 @@ namespace ProjetoAgenda
 
         private void btnSair_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
@@ -45,6 +45,16 @@ namespace ProjetoAgenda
         private void fmrUsuarios_Load(object sender, EventArgs e)
         {
             atualiza_tabela();
+        }
+
+        private void fmrUsuarios_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
+
+        private void fmrUsuarios_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
         }
     }
 }

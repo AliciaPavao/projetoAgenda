@@ -46,7 +46,7 @@
             pictureBox8 = new PictureBox();
             pictureBox9 = new PictureBox();
             pictureBox10 = new PictureBox();
-            label1 = new Label();
+            lblboasvindas = new Label();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -242,14 +242,16 @@
             pictureBox10.TabIndex = 25;
             pictureBox10.TabStop = false;
             // 
-            // label1
+            // lblboasvindas
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(279, 65);
-            label1.Name = "label1";
-            label1.Size = new Size(50, 20);
-            label1.TabIndex = 26;
-            label1.Text = "label1";
+            lblboasvindas.AutoSize = true;
+            lblboasvindas.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            lblboasvindas.ForeColor = Color.DarkKhaki;
+            lblboasvindas.Location = new Point(130, 238);
+            lblboasvindas.Name = "lblboasvindas";
+            lblboasvindas.Size = new Size(214, 37);
+            lblboasvindas.TabIndex = 26;
+            lblboasvindas.Text = "Seja bem vindo";
             // 
             // frmPrincipal
             // 
@@ -257,7 +259,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LemonChiffon;
             ClientSize = new Size(702, 525);
-            Controls.Add(label1);
+            Controls.Add(lblboasvindas);
             Controls.Add(pictureBox10);
             Controls.Add(pictureBox9);
             Controls.Add(pictureBox8);
@@ -309,6 +311,6 @@
         private PictureBox pictureBox8;
         private PictureBox pictureBox9;
         private PictureBox pictureBox10;
-        private Label label1;
+        private Label lblboasvindas;
     }
 }

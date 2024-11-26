@@ -38,7 +38,6 @@ namespace ProjetoAgenda.VariableGlobal
 
             set
             {
-                value = value.ToUpper();
                 _nome = value;
             }
         }

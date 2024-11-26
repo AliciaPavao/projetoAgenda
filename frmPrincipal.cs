@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjetoAgenda.VariableGlobal;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,7 +25,7 @@ namespace ProjetoAgenda
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
-
+            lblboasvindas.Text = $"Seja bem vindo {UserSession.nome}"; 
         }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)

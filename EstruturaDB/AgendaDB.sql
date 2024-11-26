@@ -1,4 +1,4 @@
--- Código para criar um usuario (@ no inicio para poder fazer em linhas separadas, $ no inicio para puxar as variaveis (itens em {}))
+ Código para criar um usuario (@ no inicio para poder fazer em linhas separadas, $ no inicio para puxar as variaveis (itens em {}))
 -- @$"CREATE USER '{usuario}'@'%' IDENTIFIED BY '{senha}';
 
 -- Código para GARANTIR privilegios a algum usuario
@@ -49,6 +49,13 @@ CREATE TABLE TbInsert (
     descriçao VARCHAR (300)
 );
 
+CREATE TABLE TbUpdate (
+	cod_update INT AUTO_INCREMENT PRIMARY KEY,
+	usuario VARCHAR (20),
+    data_alterado DATETIME,
+    descriçao VARCHAR (300)
+);
+
 DELIMITER $$
 CREATE TRIGGER TrLogcategoriadel
 AFTER
@@ -87,4 +94,5 @@ BEGIN
 END;
 $$
 
-select * from tbLog;
+select nome, senha, usuario from tbusuarios;
+select * from tbcategoria;

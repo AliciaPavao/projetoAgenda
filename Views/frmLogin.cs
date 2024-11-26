@@ -1,3 +1,4 @@
+using ProjetoAgenda.Controller;
 using ProjetoAgenda.VariableGlobal;
 
 namespace ProjetoAgenda
@@ -47,7 +48,8 @@ namespace ProjetoAgenda
 
             UserSession.usuario = txtUsuario.Text;
             UserSession.senha = txtSenha.Text;
-
+            UsuarioController ValidaLogin = new UsuarioController();
+            ValidaLogin.ValidarLogin(UserSession.usuario, UserSession.senha);
             frmPrincipal Principal = new frmPrincipal();
             Principal.ShowDialog();
 
