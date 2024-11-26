@@ -47,6 +47,7 @@
             pictureBox9 = new PictureBox();
             pictureBox10 = new PictureBox();
             lblboasvindas = new Label();
+            agendaToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -66,11 +67,11 @@
             menuStrip1.Dock = DockStyle.Left;
             menuStrip1.Font = new Font("Segoe UI", 12F);
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { arquivoToolStripMenuItem, editarToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { arquivoToolStripMenuItem, editarToolStripMenuItem, agendaToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(6, 3, 0, 3);
-            menuStrip1.Size = new Size(102, 525);
+            menuStrip1.Size = new Size(156, 525);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -78,7 +79,7 @@
             // 
             arquivoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { sairToolStripMenuItem });
             arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
-            arquivoToolStripMenuItem.Size = new Size(89, 32);
+            arquivoToolStripMenuItem.Size = new Size(143, 32);
             arquivoToolStripMenuItem.Text = "&Arquivo";
             arquivoToolStripMenuItem.Click += arquivoToolStripMenuItem_Click;
             // 
@@ -86,7 +87,7 @@
             // 
             sairToolStripMenuItem.BackColor = Color.Khaki;
             sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            sairToolStripMenuItem.Size = new Size(131, 32);
+            sairToolStripMenuItem.Size = new Size(224, 32);
             sairToolStripMenuItem.Text = "Sair";
             sairToolStripMenuItem.Click += sairToolStripMenuItem_Click;
             // 
@@ -94,7 +95,7 @@
             // 
             editarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cadastrarToolStripMenuItem });
             editarToolStripMenuItem.Name = "editarToolStripMenuItem";
-            editarToolStripMenuItem.Size = new Size(89, 32);
+            editarToolStripMenuItem.Size = new Size(143, 32);
             editarToolStripMenuItem.Text = "&Editar";
             editarToolStripMenuItem.Click += editarToolStripMenuItem_Click;
             // 
@@ -103,7 +104,7 @@
             cadastrarToolStripMenuItem.BackColor = Color.Khaki;
             cadastrarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { categoriasToolStripMenuItem, usuarioToolStripMenuItem });
             cadastrarToolStripMenuItem.Name = "cadastrarToolStripMenuItem";
-            cadastrarToolStripMenuItem.Size = new Size(181, 32);
+            cadastrarToolStripMenuItem.Size = new Size(224, 32);
             cadastrarToolStripMenuItem.Text = "Cadastrar";
             // 
             // categoriasToolStripMenuItem
@@ -253,6 +254,14 @@
             lblboasvindas.TabIndex = 26;
             lblboasvindas.Text = "Seja bem vindo";
             // 
+            // agendaToolStripMenuItem
+            // 
+            agendaToolStripMenuItem.BackColor = Color.Khaki;
+            agendaToolStripMenuItem.Name = "agendaToolStripMenuItem";
+            agendaToolStripMenuItem.Size = new Size(143, 32);
+            agendaToolStripMenuItem.Text = "Agenda";
+            agendaToolStripMenuItem.Click += agendaToolStripMenuItem_Click;
+            // 
             // frmPrincipal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -312,5 +321,6 @@
         private PictureBox pictureBox9;
         private PictureBox pictureBox10;
         private Label lblboasvindas;
+        private ToolStripMenuItem agendaToolStripMenuItem;
     }
 }

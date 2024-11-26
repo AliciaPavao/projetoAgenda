@@ -25,7 +25,7 @@ namespace ProjetoAgenda
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
-            lblboasvindas.Text = $"Seja bem vindo {UserSession.nome}"; 
+            lblboasvindas.Text = $"Seja bem vindo {UserSession.nome}";
         }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
@@ -58,6 +58,12 @@ namespace ProjetoAgenda
         private void pictureBox6_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void agendaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAgenda agenda = new frmAgenda();
+            agenda.ShowDialog();
         }
     }
 }

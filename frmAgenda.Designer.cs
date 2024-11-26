@@ -29,23 +29,24 @@
         private void InitializeComponent()
         {
             gbAgenda = new GroupBox();
+            cmbCategoria = new ComboBox();
+            btnsair = new Button();
             lblcategoria = new Label();
             lbltelefone = new Label();
             lblcontato = new Label();
             btnalterar = new Button();
             btnexcluir = new Button();
             btncadastrar = new Button();
-            txtcategoria = new TextBox();
             txttelefone = new TextBox();
             txtcontato = new TextBox();
-            dataGridView1 = new DataGridView();
-            btnsair = new Button();
+            dgvContatos = new DataGridView();
             gbAgenda.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvContatos).BeginInit();
             SuspendLayout();
             // 
             // gbAgenda
             // 
+            gbAgenda.Controls.Add(cmbCategoria);
             gbAgenda.Controls.Add(btnsair);
             gbAgenda.Controls.Add(lblcategoria);
             gbAgenda.Controls.Add(lbltelefone);
@@ -53,7 +54,6 @@
             gbAgenda.Controls.Add(btnalterar);
             gbAgenda.Controls.Add(btnexcluir);
             gbAgenda.Controls.Add(btncadastrar);
-            gbAgenda.Controls.Add(txtcategoria);
             gbAgenda.Controls.Add(txttelefone);
             gbAgenda.Controls.Add(txtcontato);
             gbAgenda.Location = new Point(27, 18);
@@ -62,6 +62,30 @@
             gbAgenda.TabIndex = 0;
             gbAgenda.TabStop = false;
             gbAgenda.Text = "Agenda";
+            // 
+            // cmbCategoria
+            // 
+            cmbCategoria.BackColor = SystemColors.Info;
+            cmbCategoria.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            cmbCategoria.FormattingEnabled = true;
+            cmbCategoria.Location = new Point(17, 188);
+            cmbCategoria.Name = "cmbCategoria";
+            cmbCategoria.Size = new Size(210, 36);
+            cmbCategoria.TabIndex = 11;
+            cmbCategoria.SelectedIndexChanged += cmbCategoria_SelectedIndexChanged;
+            // 
+            // btnsair
+            // 
+            btnsair.BackColor = Color.Khaki;
+            btnsair.FlatStyle = FlatStyle.Flat;
+            btnsair.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnsair.Location = new Point(134, 331);
+            btnsair.Name = "btnsair";
+            btnsair.Size = new Size(93, 62);
+            btnsair.TabIndex = 10;
+            btnsair.Text = "sair";
+            btnsair.UseVisualStyleBackColor = false;
+            btnsair.Click += btnsair_Click;
             // 
             // lblcategoria
             // 
@@ -129,20 +153,12 @@
             btncadastrar.TabIndex = 4;
             btncadastrar.Text = "cadastrar";
             btncadastrar.UseVisualStyleBackColor = false;
-            // 
-            // txtcategoria
-            // 
-            txtcategoria.BackColor = SystemColors.Info;
-            txtcategoria.Font = new Font("Segoe UI", 12F);
-            txtcategoria.Location = new Point(17, 188);
-            txtcategoria.Name = "txtcategoria";
-            txtcategoria.Size = new Size(210, 34);
-            txtcategoria.TabIndex = 3;
+            btncadastrar.Click += btncadastrar_Click;
             // 
             // txttelefone
             // 
             txttelefone.BackColor = SystemColors.Info;
-            txttelefone.Font = new Font("Segoe UI", 12F);
+            txttelefone.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             txttelefone.Location = new Point(17, 120);
             txttelefone.Name = "txttelefone";
             txttelefone.Size = new Size(210, 34);
@@ -151,34 +167,21 @@
             // txtcontato
             // 
             txtcontato.BackColor = SystemColors.Info;
-            txtcontato.Font = new Font("Segoe UI", 12F);
+            txtcontato.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             txtcontato.Location = new Point(17, 53);
             txtcontato.Name = "txtcontato";
             txtcontato.Size = new Size(210, 34);
             txtcontato.TabIndex = 1;
             // 
-            // dataGridView1
+            // dgvContatos
             // 
-            dataGridView1.BackgroundColor = SystemColors.Info;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(295, 18);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(421, 408);
-            dataGridView1.TabIndex = 1;
-            // 
-            // btnsair
-            // 
-            btnsair.BackColor = Color.Khaki;
-            btnsair.FlatStyle = FlatStyle.Flat;
-            btnsair.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnsair.Location = new Point(134, 331);
-            btnsair.Name = "btnsair";
-            btnsair.Size = new Size(93, 62);
-            btnsair.TabIndex = 10;
-            btnsair.Text = "sair";
-            btnsair.UseVisualStyleBackColor = false;
-            btnsair.Click += btnsair_Click;
+            dgvContatos.BackgroundColor = SystemColors.Info;
+            dgvContatos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvContatos.Location = new Point(295, 18);
+            dgvContatos.Name = "dgvContatos";
+            dgvContatos.RowHeadersWidth = 51;
+            dgvContatos.Size = new Size(421, 408);
+            dgvContatos.TabIndex = 1;
             // 
             // frmAgenda
             // 
@@ -186,15 +189,16 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LemonChiffon;
             ClientSize = new Size(740, 450);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvContatos);
             Controls.Add(gbAgenda);
             FormBorderStyle = FormBorderStyle.None;
             Name = "frmAgenda";
             Text = "frmAgenda";
             FormClosed += frmAgenda_FormClosed;
+            Load += frmAgenda_Load;
             gbAgenda.ResumeLayout(false);
             gbAgenda.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvContatos).EndInit();
             ResumeLayout(false);
         }
 
@@ -204,13 +208,13 @@
         private Button btnalterar;
         private Button btnexcluir;
         private Button btncadastrar;
-        private TextBox txtcategoria;
         private TextBox txttelefone;
         private TextBox txtcontato;
-        private DataGridView dataGridView1;
+        private DataGridView dgvContatos;
         private Label lbltelefone;
         private Label lblcontato;
         private Label lblcategoria;
         private Button btnsair;
+        private ComboBox cmbCategoria;
     }
 }
