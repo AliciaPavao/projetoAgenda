@@ -55,7 +55,24 @@ namespace ProjetoAgenda
 
         private void btncadastrar_Click(object sender, EventArgs e)
         {
+            string contato = txtcontato.Text;
+            string telefone = txttelefone.Text;
+            string categoria = cmbCategoria.Text;
+            ContatoController AddContato = new ContatoController();
+            AddContato.AddContato(contato, telefone, categoria);
 
+            AtualizaDataGrid();
+        }
+
+        private void btnexcluir_Click(object sender, EventArgs e)
+        {
+            int codContato = Convert.ToInt32(dgvContatos.SelectedRows[0].Cells[0].Value);
+
+            //int Codcontatos = Convert.ToInt32(txtCategoria.Text);
+            ContatoController ExcluirContato = new ContatoController();
+            ExcluirContato.DelContato(codContato);
+
+            AtualizaDataGrid();
         }
     }
 }

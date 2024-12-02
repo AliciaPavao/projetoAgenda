@@ -98,5 +98,51 @@ namespace ProjetoAgenda.Controller
                 conexao.Close();
             }
         }
+
+        public bool DelContato(int cod_contato)
+        {
+            MySqlConnection conexao = null;
+            try
+            {
+
+                conexao = ConexaoDB.CriarConexao();
+
+                //Comando SQL que será executado
+                string sql = "delete from tbcontato where cod_contato = @cod_contato;";
+
+                //Abri a conexão com o banco
+                conexao.Open();
+
+                //Esse cara é o responsavel por executar o comando SQL
+                MySqlCommand comando = new MySqlCommand(sql, conexao);
+
+                //Estou trocanco o valor dos @ pelas informações que serão cadastradas
+                //Essas informações vieram dos parametros da função
+                comando.Parameters.AddWithValue("@cod_contato", cod_contato);
+
+                //Executando no banco de dados
+                int linhasAfetadas = comando.ExecuteNonQuery();
+
+                conexao.Close();
+
+                if (linhasAfetadas > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show($"Erro ao deletar: {erro.Message}", "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            finally
+            {
+                conexao.Close();
+            }
+        }
     }
 }

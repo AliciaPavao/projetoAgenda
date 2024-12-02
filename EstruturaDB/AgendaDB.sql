@@ -1,10 +1,3 @@
- Código para criar um usuario (@ no inicio para poder fazer em linhas separadas, $ no inicio para puxar as variaveis (itens em {}))
--- @$"CREATE USER '{usuario}'@'%' IDENTIFIED BY '{senha}';
-
--- Código para GARANTIR privilegios a algum usuario
--- GRANT SELECT, INSERT, UPDATE ON *.* TO '{usuario}'@'%'; 
-
-
 CREATE DATABASE dbAgenda;
 
 USE dbAgenda;
@@ -15,8 +8,6 @@ CREATE TABLE tbUsuarios (
     telefone VARCHAR(15),
     senha VARCHAR(20) NOT NULL
     );
-
-select * from tbUsuarios;
 
 CREATE TABLE TbCategoria (
 	categorias VARCHAR(40) NOT NULL,
@@ -42,8 +33,9 @@ CREATE TABLE TbLog (
     descriçao VARCHAR (300)
 );
 
-CREATE TABLE TbInsert (
-	cod_insert INT AUTO_INCREMENT PRIMARY KEY,
+
+CREATE TABLE Tbdel (
+	cod_ INT AUTO_INCREMENT PRIMARY KEY,
 	usuario VARCHAR (20),
     data_alterado DATETIME,
     descriçao VARCHAR (300)
@@ -56,14 +48,22 @@ CREATE TABLE TbUpdate (
     descriçao VARCHAR (300)
 );
 
+CREATE TABLE tbcontato (
+	cod_contato INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(20),
+    telefone VARCHAR (15),
+    categoria VARCHAR (40)
+);
+
+
 DELIMITER $$
-CREATE TRIGGER TrLogcategoriadel
+CREATE TRIGGER Trlogcategoriadel
 AFTER
 DELETE
 ON Tbcategoria
 FOR EACH ROW
 BEGIN
-    INSERT INTO TbLog
+    INSERT INTO Tbdel
 		(usuario,
         data_alterado,
         descriçao)
@@ -75,14 +75,15 @@ BEGIN
 END;
 $$
 
+
 DELIMITER $$
-CREATE TRIGGER Trcategoriaincert
+CREATE TRIGGER Trcategoriainsert
 AFTER 
 INSERT
 ON Tbcategoria
 FOR EACH ROW
 BEGIN
-	INSERT INTO TbInsert
+	INSERT INTO tblog
 		(usuario,
         data_alterado,
         descriçao)
@@ -93,6 +94,3 @@ BEGIN
         );
 END;
 $$
-
-select nome, senha, usuario from tbusuarios;
-select * from tbcategoria;

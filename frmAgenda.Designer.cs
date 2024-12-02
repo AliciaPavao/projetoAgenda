@@ -56,9 +56,11 @@
             gbAgenda.Controls.Add(btncadastrar);
             gbAgenda.Controls.Add(txttelefone);
             gbAgenda.Controls.Add(txtcontato);
-            gbAgenda.Location = new Point(27, 18);
+            gbAgenda.Location = new Point(24, 14);
+            gbAgenda.Margin = new Padding(3, 2, 3, 2);
             gbAgenda.Name = "gbAgenda";
-            gbAgenda.Size = new Size(244, 408);
+            gbAgenda.Padding = new Padding(3, 2, 3, 2);
+            gbAgenda.Size = new Size(214, 306);
             gbAgenda.TabIndex = 0;
             gbAgenda.TabStop = false;
             gbAgenda.Text = "Agenda";
@@ -68,9 +70,10 @@
             cmbCategoria.BackColor = SystemColors.Info;
             cmbCategoria.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             cmbCategoria.FormattingEnabled = true;
-            cmbCategoria.Location = new Point(17, 188);
+            cmbCategoria.Location = new Point(15, 141);
+            cmbCategoria.Margin = new Padding(3, 2, 3, 2);
             cmbCategoria.Name = "cmbCategoria";
-            cmbCategoria.Size = new Size(210, 36);
+            cmbCategoria.Size = new Size(184, 29);
             cmbCategoria.TabIndex = 11;
             cmbCategoria.SelectedIndexChanged += cmbCategoria_SelectedIndexChanged;
             // 
@@ -79,9 +82,10 @@
             btnsair.BackColor = Color.Khaki;
             btnsair.FlatStyle = FlatStyle.Flat;
             btnsair.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnsair.Location = new Point(134, 331);
+            btnsair.Location = new Point(117, 248);
+            btnsair.Margin = new Padding(3, 2, 3, 2);
             btnsair.Name = "btnsair";
-            btnsair.Size = new Size(93, 62);
+            btnsair.Size = new Size(81, 46);
             btnsair.TabIndex = 10;
             btnsair.Text = "sair";
             btnsair.UseVisualStyleBackColor = false;
@@ -91,9 +95,9 @@
             // 
             lblcategoria.AutoSize = true;
             lblcategoria.Font = new Font("Segoe UI", 7F, FontStyle.Bold);
-            lblcategoria.Location = new Point(17, 170);
+            lblcategoria.Location = new Point(15, 128);
             lblcategoria.Name = "lblcategoria";
-            lblcategoria.Size = new Size(60, 15);
+            lblcategoria.Size = new Size(49, 12);
             lblcategoria.TabIndex = 9;
             lblcategoria.Text = "Categoria";
             // 
@@ -101,9 +105,9 @@
             // 
             lbltelefone.AutoSize = true;
             lbltelefone.Font = new Font("Segoe UI", 7F, FontStyle.Bold);
-            lbltelefone.Location = new Point(17, 102);
+            lbltelefone.Location = new Point(15, 76);
             lbltelefone.Name = "lbltelefone";
-            lbltelefone.Size = new Size(56, 15);
+            lbltelefone.Size = new Size(44, 12);
             lbltelefone.TabIndex = 8;
             lbltelefone.Text = "Telefone";
             lbltelefone.Click += lbltelefone_Click;
@@ -112,9 +116,9 @@
             // 
             lblcontato.AutoSize = true;
             lblcontato.Font = new Font("Segoe UI", 7F, FontStyle.Bold);
-            lblcontato.Location = new Point(17, 35);
+            lblcontato.Location = new Point(15, 26);
             lblcontato.Name = "lblcontato";
-            lblcontato.Size = new Size(51, 15);
+            lblcontato.Size = new Size(42, 12);
             lblcontato.TabIndex = 7;
             lblcontato.Text = "Contato";
             // 
@@ -123,9 +127,10 @@
             btnalterar.BackColor = Color.Khaki;
             btnalterar.FlatStyle = FlatStyle.Flat;
             btnalterar.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnalterar.Location = new Point(17, 331);
+            btnalterar.Location = new Point(15, 248);
+            btnalterar.Margin = new Padding(3, 2, 3, 2);
             btnalterar.Name = "btnalterar";
-            btnalterar.Size = new Size(93, 62);
+            btnalterar.Size = new Size(81, 46);
             btnalterar.TabIndex = 6;
             btnalterar.Text = "alterar";
             btnalterar.UseVisualStyleBackColor = false;
@@ -135,21 +140,24 @@
             btnexcluir.BackColor = Color.Khaki;
             btnexcluir.FlatStyle = FlatStyle.Flat;
             btnexcluir.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btnexcluir.Location = new Point(134, 253);
+            btnexcluir.Location = new Point(117, 190);
+            btnexcluir.Margin = new Padding(3, 2, 3, 2);
             btnexcluir.Name = "btnexcluir";
-            btnexcluir.Size = new Size(93, 62);
+            btnexcluir.Size = new Size(81, 46);
             btnexcluir.TabIndex = 5;
             btnexcluir.Text = "excluir";
             btnexcluir.UseVisualStyleBackColor = false;
+            btnexcluir.Click += btnexcluir_Click;
             // 
             // btncadastrar
             // 
             btncadastrar.BackColor = Color.Khaki;
             btncadastrar.FlatStyle = FlatStyle.Flat;
             btncadastrar.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            btncadastrar.Location = new Point(17, 253);
+            btncadastrar.Location = new Point(15, 190);
+            btncadastrar.Margin = new Padding(3, 2, 3, 2);
             btncadastrar.Name = "btncadastrar";
-            btncadastrar.Size = new Size(93, 62);
+            btncadastrar.Size = new Size(81, 46);
             btncadastrar.TabIndex = 4;
             btncadastrar.Text = "cadastrar";
             btncadastrar.UseVisualStyleBackColor = false;
@@ -159,39 +167,43 @@
             // 
             txttelefone.BackColor = SystemColors.Info;
             txttelefone.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            txttelefone.Location = new Point(17, 120);
+            txttelefone.Location = new Point(15, 90);
+            txttelefone.Margin = new Padding(3, 2, 3, 2);
             txttelefone.Name = "txttelefone";
-            txttelefone.Size = new Size(210, 34);
+            txttelefone.Size = new Size(184, 29);
             txttelefone.TabIndex = 2;
             // 
             // txtcontato
             // 
             txtcontato.BackColor = SystemColors.Info;
             txtcontato.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            txtcontato.Location = new Point(17, 53);
+            txtcontato.Location = new Point(15, 40);
+            txtcontato.Margin = new Padding(3, 2, 3, 2);
             txtcontato.Name = "txtcontato";
-            txtcontato.Size = new Size(210, 34);
+            txtcontato.Size = new Size(184, 29);
             txtcontato.TabIndex = 1;
             // 
             // dgvContatos
             // 
             dgvContatos.BackgroundColor = SystemColors.Info;
             dgvContatos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvContatos.Location = new Point(295, 18);
+            dgvContatos.Location = new Point(258, 14);
+            dgvContatos.Margin = new Padding(3, 2, 3, 2);
             dgvContatos.Name = "dgvContatos";
             dgvContatos.RowHeadersWidth = 51;
-            dgvContatos.Size = new Size(421, 408);
+            dgvContatos.Size = new Size(368, 306);
             dgvContatos.TabIndex = 1;
             // 
             // frmAgenda
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LemonChiffon;
-            ClientSize = new Size(740, 450);
+            ClientSize = new Size(648, 338);
             Controls.Add(dgvContatos);
             Controls.Add(gbAgenda);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "frmAgenda";
             Text = "frmAgenda";
             FormClosed += frmAgenda_FormClosed;
