@@ -104,7 +104,7 @@ namespace ProjetoAgenda.Controller
             try
             {
 
-                conexao = ConexaoDB.CriarConexao();
+                conexao = ConexaoDB.CriarConexao(UserSession.usuario, UserSession.senha);
 
                 //Comando SQL que será executado
                 string sql = "delete from TbCategoria where cod_categoria = @cod_categoria;";
@@ -150,7 +150,7 @@ namespace ProjetoAgenda.Controller
             try
             {
 
-                conexao = ConexaoDB.CriarConexao();
+                conexao = ConexaoDB.CriarConexao(UserSession.usuario, UserSession.senha);
 
                 //Comando SQL que será executado
                 string sql = "Update TbCategoria set categorias = @categoria where cod_categoria = @cod_categoria;";

@@ -45,6 +45,7 @@ namespace ProjetoAgenda
             DataTable tabela = controleCategoria.GetCategorias();
             cmbCategoria.DataSource = tabela;
             cmbCategoria.DisplayMember = "categoria";
+            AtualizaDataGrid();
 
         }
 
@@ -73,6 +74,24 @@ namespace ProjetoAgenda
             ExcluirContato.DelContato(codContato);
 
             AtualizaDataGrid();
+        }
+
+        private void btnalterar_Click(object sender, EventArgs e)
+        {
+            int codContato = Convert.ToInt32(dgvContatos.SelectedRows[0].Cells[0].Value);
+            string contato = txtcontato.Text;
+            string telefone = txttelefone.Text;
+            string categoria = cmbCategoria.Text;
+
+            ContatoController AlterarContato = new ContatoController();
+            AlterarContato.UpdateContato(codContato, contato, telefone, categoria);
+
+            AtualizaDataGrid();
+        }
+
+        private void txtcontato_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

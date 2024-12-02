@@ -134,6 +134,7 @@
             btnalterar.TabIndex = 6;
             btnalterar.Text = "alterar";
             btnalterar.UseVisualStyleBackColor = false;
+            btnalterar.Click += btnalterar_Click;
             // 
             // btnexcluir
             // 
@@ -182,6 +183,7 @@
             txtcontato.Name = "txtcontato";
             txtcontato.Size = new Size(184, 29);
             txtcontato.TabIndex = 1;
+            txtcontato.TextChanged += txtcontato_TextChanged;
             // 
             // dgvContatos
             // 
@@ -191,6 +193,7 @@
             dgvContatos.Margin = new Padding(3, 2, 3, 2);
             dgvContatos.Name = "dgvContatos";
             dgvContatos.RowHeadersWidth = 51;
+            dgvContatos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvContatos.Size = new Size(368, 306);
             dgvContatos.TabIndex = 1;
             // 
