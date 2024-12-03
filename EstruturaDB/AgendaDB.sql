@@ -1,7 +1,11 @@
+-- Criando a database
 CREATE DATABASE dbAgenda;
 
+-- Usando a database
 USE dbAgenda;
 
+-- Criando as tabelas
+-- Usuarios
 CREATE TABLE tbUsuarios (
 	nome VARCHAR(60) NOT NULL,
     usuario VARCHAR(20) PRIMARY KEY,
@@ -9,12 +13,50 @@ CREATE TABLE tbUsuarios (
     senha VARCHAR(20) NOT NULL
     );
 
+-- Categorias
 CREATE TABLE TbCategoria (
 	categorias VARCHAR(40) NOT NULL,
     cod_categoria INT AUTO_INCREMENT primary key,
     usuario varchar(20)
     );
 
+-- Login
+CREATE TABLE TbLog (
+	cod_log INT AUTO_INCREMENT PRIMARY KEY,
+	usuario VARCHAR (20),
+    data_alterado DATETIME,
+    descriçao VARCHAR (300)
+);
+
+-- Contatos
+CREATE TABLE tbcontato (
+	cod_contato INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(20),
+    telefone VARCHAR (15),
+    categoria VARCHAR (40),
+    usuario varchar(30)
+);
+
+-- Deletar
+CREATE TABLE Tbdel (
+	cod_ INT AUTO_INCREMENT PRIMARY KEY,
+	usuario VARCHAR (20),
+    data_alterado DATETIME,
+    descriçao VARCHAR (300)
+);
+
+-- Alterar
+CREATE TABLE TbUpdate (
+	cod_update INT AUTO_INCREMENT PRIMARY KEY,
+	usuario VARCHAR (20),
+    data_alterado DATETIME,
+    descriçao VARCHAR (300)
+);
+
+
+-- Triggers
+
+-- Inserir categorias
 DELIMITER $$
 CREATE TRIGGER 	TrInsertcategoria
 BEFORE
@@ -24,38 +66,8 @@ FOR EACH ROW
 BEGIN
 	SET NEW.usuario = USER();
 END$$
-	
-    
-CREATE TABLE TbLog (
-	cod_log INT AUTO_INCREMENT PRIMARY KEY,
-	usuario VARCHAR (20),
-    data_alterado DATETIME,
-    descriçao VARCHAR (300)
-);
 
-
-CREATE TABLE Tbdel (
-	cod_ INT AUTO_INCREMENT PRIMARY KEY,
-	usuario VARCHAR (20),
-    data_alterado DATETIME,
-    descriçao VARCHAR (300)
-);
-
-CREATE TABLE TbUpdate (
-	cod_update INT AUTO_INCREMENT PRIMARY KEY,
-	usuario VARCHAR (20),
-    data_alterado DATETIME,
-    descriçao VARCHAR (300)
-);
-
-CREATE TABLE tbcontato (
-	cod_contato INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(20),
-    telefone VARCHAR (15),
-    categoria VARCHAR (40),
-    usuario varchar(30)
-);
-
+-- Inserir um contato
 DELIMITER $$
 CREATE TRIGGER 	TrInsertcontato
 BEFORE
@@ -66,6 +78,7 @@ BEGIN
 	SET NEW.usuario = USER();
 END$$
 
+-- Excluir categoria
 DELIMITER $$
 CREATE TRIGGER Trlogcategoriadel
 AFTER
@@ -85,6 +98,7 @@ BEGIN
 END;
 $$
 
+-- Alterar categoria
 DELIMITER $$
 CREATE TRIGGER Trlogcategoriaupdate
 AFTER
@@ -104,6 +118,7 @@ BEGIN
 END;
 $$
 
+-- Inserir uma categoria
 DELIMITER $$
 CREATE TRIGGER Trcategoriainsert
 AFTER 
@@ -123,6 +138,7 @@ BEGIN
 END;
 $$
 
+-- Inserir contato
 DELIMITER $$
 CREATE TRIGGER Trcontatoinsert
 AFTER 
@@ -142,6 +158,7 @@ BEGIN
 END;
 $$
 
+-- Alterar um contato
 DELIMITER $$
 CREATE TRIGGER Trlogcontatoupdate
 AFTER
@@ -161,6 +178,8 @@ BEGIN
 END;
 $$
 
+
+-- Deletar um contato
 DELIMITER $$
 CREATE TRIGGER Trlogcontatodel
 AFTER
@@ -182,6 +201,3 @@ $$
 
 select * from tbusuarios;
 select * from tblog;
-
-
-

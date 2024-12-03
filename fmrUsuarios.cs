@@ -56,5 +56,13 @@ namespace ProjetoAgenda
         {
 
         }
+
+        private void btnAlterasenha_Click(object sender, EventArgs e)
+        {
+            string senha = txtNovaSenha.Text;
+            string usuario = Convert.ToString(dgvUsers.SelectedRows[0].Cells[0].Value);
+            UsuarioController updateSenha = new UsuarioController();
+            updateSenha.UpdateSenha(usuario, senha);
+        }
     }
 }

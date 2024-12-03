@@ -34,7 +34,7 @@
             btnExcluir = new Button();
             gbAlterarsenha = new GroupBox();
             btnAlterasenha = new Button();
-            textBox1 = new TextBox();
+            txtNovaSenha = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dgvUsers).BeginInit();
             gbAlterarsenha.SuspendLayout();
             SuspendLayout();
@@ -43,12 +43,11 @@
             // 
             dgvUsers.BackgroundColor = SystemColors.Info;
             dgvUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvUsers.Location = new Point(33, 72);
-            dgvUsers.Margin = new Padding(3, 4, 3, 4);
+            dgvUsers.Location = new Point(29, 54);
             dgvUsers.Name = "dgvUsers";
             dgvUsers.RowHeadersWidth = 51;
             dgvUsers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvUsers.Size = new Size(357, 327);
+            dgvUsers.Size = new Size(312, 245);
             dgvUsers.TabIndex = 0;
             dgvUsers.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -57,10 +56,9 @@
             btnSair.BackColor = Color.Khaki;
             btnSair.FlatStyle = FlatStyle.Flat;
             btnSair.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            btnSair.Location = new Point(311, 411);
-            btnSair.Margin = new Padding(3, 4, 3, 4);
+            btnSair.Location = new Point(272, 308);
             btnSair.Name = "btnSair";
-            btnSair.Size = new Size(79, 37);
+            btnSair.Size = new Size(69, 28);
             btnSair.TabIndex = 1;
             btnSair.Text = "fechar";
             btnSair.UseVisualStyleBackColor = false;
@@ -70,9 +68,10 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            label1.Location = new Point(33, 33);
+            label1.ForeColor = Color.DarkKhaki;
+            label1.Location = new Point(29, 25);
             label1.Name = "label1";
-            label1.Size = new Size(401, 32);
+            label1.Size = new Size(312, 25);
             label1.TabIndex = 2;
             label1.Text = "Selecione um usuario para excluir";
             // 
@@ -81,10 +80,9 @@
             btnExcluir.BackColor = Color.Khaki;
             btnExcluir.FlatStyle = FlatStyle.Flat;
             btnExcluir.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            btnExcluir.Location = new Point(33, 411);
-            btnExcluir.Margin = new Padding(3, 4, 3, 4);
+            btnExcluir.Location = new Point(29, 308);
             btnExcluir.Name = "btnExcluir";
-            btnExcluir.Size = new Size(79, 37);
+            btnExcluir.Size = new Size(69, 28);
             btnExcluir.TabIndex = 3;
             btnExcluir.Text = "excluir";
             btnExcluir.UseVisualStyleBackColor = false;
@@ -93,12 +91,10 @@
             // gbAlterarsenha
             // 
             gbAlterarsenha.Controls.Add(btnAlterasenha);
-            gbAlterarsenha.Controls.Add(textBox1);
-            gbAlterarsenha.Location = new Point(411, 116);
-            gbAlterarsenha.Margin = new Padding(3, 4, 3, 4);
+            gbAlterarsenha.Controls.Add(txtNovaSenha);
+            gbAlterarsenha.Location = new Point(360, 87);
             gbAlterarsenha.Name = "gbAlterarsenha";
-            gbAlterarsenha.Padding = new Padding(3, 4, 3, 4);
-            gbAlterarsenha.Size = new Size(272, 235);
+            gbAlterarsenha.Size = new Size(238, 176);
             gbAlterarsenha.TabIndex = 4;
             gbAlterarsenha.TabStop = false;
             gbAlterarsenha.Text = "Alterar senha";
@@ -107,37 +103,35 @@
             // 
             btnAlterasenha.BackColor = Color.Khaki;
             btnAlterasenha.FlatStyle = FlatStyle.Flat;
-            btnAlterasenha.Location = new Point(66, 139);
-            btnAlterasenha.Margin = new Padding(3, 4, 3, 4);
+            btnAlterasenha.Location = new Point(58, 104);
             btnAlterasenha.Name = "btnAlterasenha";
-            btnAlterasenha.Size = new Size(135, 68);
+            btnAlterasenha.Size = new Size(118, 51);
             btnAlterasenha.TabIndex = 1;
             btnAlterasenha.Text = "Alterar";
             btnAlterasenha.UseVisualStyleBackColor = false;
+            btnAlterasenha.Click += btnAlterasenha_Click;
             // 
-            // textBox1
+            // txtNovaSenha
             // 
-            textBox1.BackColor = SystemColors.Info;
-            textBox1.Font = new Font("Segoe UI", 14F);
-            textBox1.Location = new Point(15, 63);
-            textBox1.Margin = new Padding(3, 4, 3, 4);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(244, 39);
-            textBox1.TabIndex = 0;
+            txtNovaSenha.BackColor = SystemColors.Info;
+            txtNovaSenha.Font = new Font("Segoe UI", 14F);
+            txtNovaSenha.Location = new Point(13, 47);
+            txtNovaSenha.Name = "txtNovaSenha";
+            txtNovaSenha.Size = new Size(214, 32);
+            txtNovaSenha.TabIndex = 0;
             // 
             // fmrUsuarios
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LemonChiffon;
-            ClientSize = new Size(712, 462);
+            ClientSize = new Size(623, 346);
             Controls.Add(btnExcluir);
             Controls.Add(label1);
             Controls.Add(btnSair);
             Controls.Add(dgvUsers);
             Controls.Add(gbAlterarsenha);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "fmrUsuarios";
             Text = "fmrUsuarios";
             FormClosing += fmrUsuarios_FormClosing;
@@ -158,6 +152,6 @@
         private Button btnExcluir;
         private GroupBox gbAlterarsenha;
         private Button btnAlterasenha;
-        private TextBox textBox1;
+        private TextBox txtNovaSenha;
     }
 }
